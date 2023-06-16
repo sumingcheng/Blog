@@ -1,4 +1,3 @@
-import {useRouter} from 'next/router'
 import React, {useState} from 'react';
 import {AppstoreOutlined, MailOutlined, SettingOutlined} from '@ant-design/icons';
 import type {MenuProps} from 'antd';
