@@ -1,6 +1,5 @@
 import Layout from "@/layout";
 
-
 function IndexPage () {
   return (
       <>

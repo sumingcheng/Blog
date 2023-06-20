@@ -1,11 +1,8 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import Header from "@/layout/header";
 import {Col, Row} from 'antd';
 import Footer from "@/layout/footer";
-
-interface Props {
-  children: ReactNode;  // 指定children属性
-}
+import {Props} from "@/types/layout";
 
 const Layout: React.FC<Props> = ({children}) => {
   return (
