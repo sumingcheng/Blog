@@ -5,4 +5,3 @@ package.json
 **/*.html
 /node_modules
 /.next
-/dist

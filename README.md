@@ -9,9 +9,6 @@ yarn dev
 # or
 pnpm dev
 ```
-## 博客功能
-1. 首页、笔记、搜索、友链
-2. 笔记是按照时间进行展示、可以ctrl+k进行搜索
 
 ### PM2
 
@@ -28,8 +25,10 @@ pnpm dev
     pm2 show app ; 显示应用程序的所有信息
 ```
 
-### nginx 
-打开 Nginx 的默认配置文件，通常位于 /etc/nginx/sites-available/default 或 /etc/nginx/nginx.conf，具体位置取决于你的操作系统和 Nginx 安装方式。
+### nginx
+
+打开 Nginx 的默认配置文件，通常位于 /etc/nginx/sites-available/default 或 /etc/nginx/nginx.conf，具体位置取决于你的操作系统和
+Nginx 安装方式。
 
 在配置文件中找到默认 server 块。该块通常包含以下内容：
 
@@ -62,4 +61,13 @@ server {
     ...
 }
 ```
+
 重启服务 sudo service nginx restart
+
+### _app.js
+
+1. 全局样式：在 Next.js 中，全局 CSS 只能在 _app.js 文件中导入，而不能在其他任何地方导入。这可以确保全局样式只加载一次，而不是在每个页面加载。
+3. 页面初始属性：如果你需要在页面初始加载时获取数据，你可以在 _app.js 中使用 getInitialProps
+   方法。这是一个异步方法，它可以从服务器端或客户端获取数据，这取决于哪个先发生。
+5. 状态持久化：如果你使用 Redux 或者其他任何状态管理库，你可能需要在 _app.js 中设置 Provider，以便在所有页面之间共享状态。
+7. 布局组件：如果你有一些布局组件，比如导航栏或页脚，在每个页面都需要出现，你可以在 _app.js 中添加这些组件。

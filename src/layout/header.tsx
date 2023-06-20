@@ -1,52 +1,44 @@
 import React, {useState} from 'react';
-import {AppstoreOutlined, MailOutlined, SettingOutlined} from '@ant-design/icons';
+import {
+  AppstoreFilled,
+  CloudFilled,
+  CodeSandboxSquareFilled,
+  GithubFilled,
+  HomeFilled,
+  RobotFilled,
+  YuqueFilled
+} from '@ant-design/icons';
 import type {MenuProps} from 'antd';
 import {Menu} from 'antd';
-import {MenuIndex} from "@/styles/PageStyled";
-
 
 const items: MenuProps['items'] = [
   {
-    label: 'Navigation One',
-    key: 'mail',
-    icon: <MailOutlined/>,
+    label: '首页',
+    key: '1',
+    icon: <HomeFilled/>,
   },
   {
-    label: 'Navigation Two',
-    key: 'app',
-    icon: <AppstoreOutlined/>,
-    disabled: true,
-  },
-  {
-    label: 'Navigation Three - Submenu',
-    key: 'SubMenu',
-    icon: <SettingOutlined/>,
+    label: '应用',
+    key: '2',
+    icon: <AppstoreFilled/>,
     children: [
       {
         type: 'group',
-        label: 'Item 1',
         children: [
           {
-            label: 'Option 1',
-            key: 'setting:1',
+            label: 'ChatGPT',
+            key: 'ChatGPT',
+            icon: <RobotFilled/>,
           },
           {
-            label: 'Option 2',
-            key: 'setting:2',
-          },
-        ],
-      },
-      {
-        type: 'group',
-        label: 'Item 2',
-        children: [
-          {
-            label: 'Option 3',
-            key: 'setting:3',
+            label: 'Nextcloud',
+            key: 'Nextcloud',
+            icon: <CloudFilled/>,
           },
           {
-            label: 'Option 4',
-            key: 'setting:4',
+            label: 'NPM',
+            key: 'NPM',
+            icon: <CodeSandboxSquareFilled/>,
           },
         ],
       },
@@ -54,11 +46,17 @@ const items: MenuProps['items'] = [
   },
   {
     label: (
-        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-          Navigation Four - Link
-        </a>
+        <a href="https://www.yuque.com/sumingcheng" target="_blank" rel="noopener noreferrer">博客</a>
     ),
-    key: 'alipay',
+    key: '3',
+    icon: <YuqueFilled/>,
+  },
+  {
+    label: (
+        <a href="https://github.com/sumingcheng?tab=stars" target="_blank" rel="noopener noreferrer">GitHub</a>
+    ),
+    key: '4',
+    icon: <GithubFilled/>,
   },
 ];
 
@@ -71,9 +69,11 @@ const Header: React.FC = () => {
   };
 
   return <>
-    <MenuIndex></MenuIndex>
-    <Menu className="bg-black fr" onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}
-          style={{justifyContent: "flex-end"}} theme="dark"/>;
+    <div className="absolute top-3 left-4">
+      <img src="" alt="header"/>
+    </div>
+    <Menu className="mr-4" onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}
+          style={{justifyContent: "flex-end"}} theme="light"/>
   </>
 };
 
