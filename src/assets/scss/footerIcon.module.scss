@@ -1,3 +1,5 @@
+@import './globals.scss';
+
 .footerIcon {
   div {
     margin: 0 10px;
@@ -7,4 +9,9 @@
       margin-left: 5px;
     }
   }
+}
+
+.footer {
+  background-color: $footerBg;
+  box-shadow: inset 0 106px 36px -116px rgba(0, 0, 0, 0.14);
 }
