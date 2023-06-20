@@ -8,6 +8,8 @@ function IndexPage () {
     const typed = new Typed(el.current, {
       strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
       typeSpeed: 50,
+      // loop: true,
+      // loopCount: 3,
     });
 
     return () => {
@@ -17,10 +19,7 @@ function IndexPage () {
 
   return (
       <Layout>
-        <div>
-          {/*打字机*/}
-          <span ref={el}/>
-        </div>
+        <span ref={el} className={`text-5xl`}/>
       </Layout>
   )
 }
