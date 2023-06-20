@@ -14,55 +14,6 @@ import Image from 'next/image';
 import headerImage from '@/assets/icons/header.jpg'
 import {useRouter} from "next/router";
 
-const items: MenuProps['items'] = [
-  {
-    label: '首页',
-    key: '1',
-    icon: <HomeFilled style={{color: "#fdd663"}}/>,
-  },
-  {
-    label: '应用',
-    key: '2',
-    icon: <AppstoreFilled style={{color: "#1677ff"}}/>,
-    children: [
-      {
-        type: 'group',
-        label: '服务',
-        children: [
-          {
-            label: 'ChatGPT',
-            key: 'ChatGPT',
-            icon: <RobotFilled/>,
-          },
-          {
-            label: 'Nextcloud',
-            key: 'Nextcloud',
-            icon: <CloudFilled/>,
-          },
-          {
-            label: 'NPM',
-            key: 'NPM',
-            icon: <CodeSandboxSquareFilled/>,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    label: (
-        <a href="https://www.yuque.com/sumingcheng" target="_blank" rel="noopener noreferrer">博客</a>
-    ),
-    key: '3',
-    icon: <YuqueFilled style={{color: "#47c870"}}/>,
-  },
-  {
-    label: (
-        <a href="https://github.com/sumingcheng?tab=stars" target="_blank" rel="noopener noreferrer">GitHub</a>
-    ),
-    key: '4',
-    icon: <GithubFilled/>,
-  },
-];
 
 const Header: React.FC = () => {
   const [current, setCurrent] = useState('mail');
@@ -77,6 +28,60 @@ const Header: React.FC = () => {
     router.push('/')
   }
 
+  const items: MenuProps['items'] = [
+    {
+      label: (
+          <a onClick={goIndex}>首页</a>
+      ),
+      key: '1',
+      icon: <HomeFilled style={{color: "#fdd663"}}/>,
+    },
+    {
+      label: '应用',
+      key: '2',
+      icon: <AppstoreFilled style={{color: "#1677ff"}}/>,
+      children: [
+        {
+          type: 'group',
+          label: '服务',
+          children: [
+            {
+              label: (
+                  <a href="https://sumingcheng.github.io/Vue3-TS-ChatGPT/#/" target="_blank"
+                     rel="noopener noreferrer">ChatGPT</a>
+              ),
+              key: 'ChatGPT',
+              icon: <RobotFilled/>,
+            },
+            {
+              label: 'Nextcloud',
+              key: 'Nextcloud',
+              icon: <CloudFilled/>,
+            },
+            {
+              label: 'NPM',
+              key: 'NPM',
+              icon: <CodeSandboxSquareFilled/>,
+            },
+          ],
+        },
+      ],
+    },
+    {
+      label: (
+          <a href="https://www.yuque.com/sumingcheng" target="_blank" rel="noopener noreferrer">博客</a>
+      ),
+      key: '3',
+      icon: <YuqueFilled style={{color: "#47c870"}}/>,
+    },
+    {
+      label: (
+          <a href="https://github.com/sumingcheng?tab=stars" target="_blank" rel="noopener noreferrer">GitHub</a>
+      ),
+      key: '4',
+      icon: <GithubFilled/>,
+    },
+  ];
   return <>
     <div className="absolute top-3 left-4 flex items-center cursor-pointer" onClick={goIndex}>
       <Image src={headerImage} alt="header" className="w-6 h-6"/>

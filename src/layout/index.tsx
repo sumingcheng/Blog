@@ -1,10 +1,13 @@
-import React from "react";
+import React, {ReactNode} from "react";
 import Header from "@/layout/header";
 import {Col, Row} from 'antd';
 import Footer from "@/layout/footer";
-import Content from "@/layout/content";
 
-const Layout: React.FC = () => {
+interface Props {
+  children: ReactNode;  // 指定children属性
+}
+
+const Layout: React.FC<Props> = ({children}) => {
   return (
       <>
         {/*顶部*/}
@@ -15,7 +18,7 @@ const Layout: React.FC = () => {
         <Row>
           <Col span={2}></Col>
           <Col span={20}>
-            <Content></Content>
+            {children}
           </Col>
           <Col span={2}></Col>
         </Row>

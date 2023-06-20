@@ -1,12 +1,16 @@
 import Layout from "@/layout";
 
 
-function HomePage () {
+function IndexPage () {
   return (
       <>
-          <Layout></Layout>
+        <Layout>
+          <div>
+            <h1>Content</h1>
+          </div>
+        </Layout>
       </>
   )
 }
 
-export default HomePage
+export default IndexPage
