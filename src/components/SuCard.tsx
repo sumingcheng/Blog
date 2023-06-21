@@ -14,8 +14,8 @@ const SuCard: React.FC<SuCardProps> = ({title, description, url, time}) => {
         <div className={`title text-2xl font-bold`}>
           {title} <ArrowRightOutlined className={`ml-4 font-bold ${S.icon}`}/>
         </div>
-        <div className={`description mb-5`}>{description}</div>
-        <div className={`absolute left-6 bottom-3 font-bold`}>{time}</div>
+        <div className={`description mb-6`}>{description}</div>
+        <div className={`absolute left-6 bottom-4 font-bold`}>{time}</div>
       </Card>
   )
 }

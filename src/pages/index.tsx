@@ -58,7 +58,7 @@ function IndexPage () {
         <div className={`${S.buttonGrid} text-center  `}>
           <Button size={"large"}>搜索</Button>
           <Button size={"large"}>历史文章</Button>
-          <Button size={"large"}>历史文章</Button>
+          <Button size={"large"}>软件仓库</Button>
         </div>
         {/*card*/}
         <div className={`w-full flex justify-around mt-16`}>
