@@ -1,0 +1,116 @@
+.btnMain {
+  transform: scale(.2);
+}
+@function gradient($positionX, $positionY, $color1, $color2, $gradientSize1, $gradientSize2) {
+  @return radial-gradient(circle at $positionX $positionY, $color1, $color1 $gradientSize1, $color2 $gradientSize2, $color2);
+}
+
+$transparent: transparent;
+$white: #fff;
+$black: #2b303e;
+$blue: #5a81b4;
+
+.btnStyle {
+  background: gradient(18%, 1.25rem, $white, $transparent, 0.375rem, 0.4375rem),
+  gradient(35%, 2.8125rem, $white, $transparent, 0.0625rem, 0.125rem),
+  gradient(10%, 4.375rem, $white, $transparent, 0.15625rem, 0.21875rem),
+  gradient(25%, 0.9375rem, $white, $transparent, 0.1875rem, 0.25rem),
+  gradient(15%, 3.125rem, $white, $transparent, 0.09375rem, 0.15625rem),
+  gradient(30%, 4.6875rem, $white, $transparent, 0.3125rem, 0.375rem),
+  gradient(5%, 1.875rem, $white, $transparent, 0.03125rem, 0.09375rem),
+  gradient(25%, 3.75rem, $white, $transparent, 0.03125rem, 0.09375rem),
+  gradient(7%, 2.1875rem, $white, $transparent, 0.03125rem, 0.09375rem),
+  linear-gradient(90deg, $black, $black 50%, $blue 50%, $blue);
+  position: relative;
+  margin: auto;
+  width: 13.75rem;
+  height: 5.625rem;
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  border-radius: 5.625rem;
+  box-shadow: 0 -0.1875rem 0.25rem #999,
+  inset 0 0.1875rem 0.3125rem #333,
+  0 0.25rem 0.25rem #ffe,
+  inset 0 -0.1875rem 0.3125rem #ddd;
+  cursor: pointer;
+  overflow: hidden;
+  transition: .5s all;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    transition: .5s all;
+  }
+
+  &::before {
+    width: 4.6875rem;
+    height: 4.6875rem;
+    border-radius: 50%;
+    background: #e9cb50;
+    inset: 0.46875rem;
+    box-shadow: 0 0 0.3125rem #333,
+    inset 0.125rem 0.125rem 0.1875rem #f8f4e4,
+    inset -0.125rem -0.125rem 0.1875rem #665613;
+    z-index: 1;
+  }
+
+  &::after {
+    width: 4.375rem;
+    height: 4.375rem;
+    inset: 0.625rem;
+    border-radius: 50%;
+    box-shadow: 0.625rem 3.75rem 0 0.625rem #fff,
+    4.0625rem 3.75rem 0 0.3125rem #fff,
+    5.9375rem 4.375rem 0 0.625rem #fff,
+    8.4375rem 2.8125rem 0 0.3125rem #fff,
+    10.625rem 2.1875rem 0 0.625rem #fff,
+    12.1875rem -0.3125rem 0 0.625rem #fff,
+    -0.625rem 0 0 3.125rem rgba(255, 255, 255, .2),
+    0.9375rem 0 0 3.125rem rgba(255, 255, 255, .15),
+    2.5rem 0 0 3.125rem rgba(255, 255, 255, .21),
+    0.625rem 2.5rem 0 0.625rem #abc1d9,
+    4.375rem 2.1875rem 0 0.625rem #abc1d9,
+    5.9375rem 2.5rem 0 0.625rem #abc1d9,
+    8.4375rem 1.25rem 0 0.625rem #abc1d9,
+    9.6875rem 0.9375rem 0 0.625rem #abc1d9,
+    11.875rem -1.25rem 0 0.625rem #abc1d9;
+  }
+}
+
+.btnStyle:hover::before {
+  filter: contrast(90%) brightness(110%);
+  scale: 1.05;
+}
+
+.btnStyle.active {
+  background-position: 0 0;
+
+  &::before {
+    translate: 8.125rem;
+    background: radial-gradient(circle at 50% 1.25rem, #939aa5, #939aa5 0.40625rem, transparent 0.4375rem, transparent),
+    radial-gradient(circle at 35% 2.8125rem, #939aa5, #939aa5 0.71875rem, transparent 0.75rem, transparent),
+    radial-gradient(circle at 72% 3.125rem, #939aa5, #939aa5 0.53125rem, transparent 0.5625rem, transparent),
+    radial-gradient(#cbcdda, #cbcdda);
+  }
+
+  &::after {
+    transform: translate(8.125rem);
+    box-shadow: 0.625rem 3.75rem 0 0.625rem transparent,
+    4.0625rem 3.75rem 0 0.3125rem transparent,
+    5.9375rem 4.375rem 0 0.625rem transparent,
+    8.4375rem 2.8125rem 0 0.3125rem transparent,
+    10.625rem 2.1875rem 0 0.625rem transparent,
+    12.1875rem -0.3125rem 0 0.625rem transparent,
+    0.625rem 0 0 3.125rem rgba(255, 255, 255, .2),
+    -0.9375rem 0 0 3.125rem rgba(255, 255, 255, .15),
+    -2.5rem 0 0 3.125rem rgba(255, 255, 255, .21),
+    0.625rem 2.5rem 0 0.625rem transparent,
+    4.375rem 2.1875rem 0 0.625rem transparent,
+    5.9375rem 2.5rem 0 0.625rem transparent,
+    8.4375rem 1.25rem 0 0.625rem transparent,
+    9.6875rem 0.9375rem 0 0.625rem transparent,
+    11.875rem -1.25rem 0 0.625rem transparent;
+  }
+}

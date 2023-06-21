@@ -9,8 +9,10 @@ const Layout: React.FC<Props> = ({children}) => {
       <>
         <div className="flex flex-col min-h-screen">
           {/*顶部*/}
-          <Row className="flex-none">
-            <Col span={24}><Header></Header></Col>
+          <Row className="flex-none w-full">
+            <Col span={24} className="w-full">
+              <Header></Header>
+            </Col>
           </Row>
           {/*内容*/}
           <Row className="flex-grow">

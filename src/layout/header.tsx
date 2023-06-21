@@ -1,22 +1,18 @@
-import React, {useState} from 'react';
-import {
-  AppstoreFilled,
-  CloudFilled,
-  CodeSandboxSquareFilled,
-  GithubFilled,
-  HomeFilled,
-  RobotFilled,
-  YuqueFilled
-} from '@ant-design/icons';
+import React, {useContext, useState} from 'react';
+import {AppstoreFilled, CloudFilled, CodeSandboxSquareFilled, GithubFilled, HomeFilled, RobotFilled, YuqueFilled} from '@ant-design/icons';
 import type {MenuProps} from 'antd';
-import {Menu} from 'antd';
+import {Col, Input, Menu, Row} from 'antd';
 import Image from 'next/image';
 import headerImage from '@/assets/icons/header.jpg'
 import {useRouter} from "next/router";
-
+import {ThemeContext} from "@/context";
+import DayAndNightBtn from "@/components/dayAndNightBtn.tsx";
+import S from '@/assets/scss/layout.module.scss'
 
 const Header: React.FC = () => {
   const [current, setCurrent] = useState('mail');
+  const {theme, setTheme} = useContext(ThemeContext);
+
   const router = useRouter()
 
   const onClick: MenuProps['onClick'] = (e) => {
@@ -27,6 +23,21 @@ const Header: React.FC = () => {
   const goIndex = () => {
     router.push('/')
   }
+
+  // 快速搜索
+  const focusInput = () => {
+    console.log('focusInput');
+  }
+
+  // 夜晚模式
+  const nightMode = () => {
+    if (theme === 'dark') {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  }
+
 
   const items: MenuProps['items'] = [
     {
@@ -86,14 +97,36 @@ const Header: React.FC = () => {
       icon: <GithubFilled/>,
     },
   ];
-  return <>
-    <div className="absolute top-4 left-6 flex items-center cursor-pointer" onClick={goIndex}>
-      <Image src={headerImage} alt="header" className="w-6 h-6"/>
-      <div className="font-bold ml-4 text-xl">SuMingcheng Blog</div>
-    </div>
-    <Menu className="mr-6 p-2" onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}
-          style={{justifyContent: "flex-end"}} theme="light"/>
-  </>
+  return (
+      <>
+        <Row className="h-16">
+          <Col span={4}>
+            <div className="mt-4 ml-6 flex items-center cursor-pointer" onClick={goIndex}>
+              <Image src={headerImage} alt="header" className="w-6 h-6"/>
+              <div className={`font-bold ml-4 text-xl ${theme === "dark" ? 'text-white' : ''}`}>SuMingcheng Blog</div>
+            </div>
+          </Col>
+          <Col span={4} offset={8} className="relative">
+            <div className="absolute -top-3 right-0" onClick={nightMode}>
+              <DayAndNightBtn/>
+            </div>
+          </Col>
+          <Col span={3}>
+            <Input className={`mt-4 ${theme === "dark" ? S.headerInput : ''}`} addonAfter="Ctrl+K" placeholder={'Quick search...'} onFocus={focusInput}/>
+          </Col>
+          <Col span={5}>
+            {/*<Menu className={`mr-6 p-2 flor ${S.Menu}`} onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}*/}
+            {/*      style={{justifyContent: "flex-end"}} theme={theme}/>*/}
+          </Col>
+        </Row>
+        <Row className={`absolute w-full -z-10 top-0 right-0 h-16`}>
+          <Col span={24}>
+            <Menu className={`mr-6 p-2 w-full`} onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}
+                  style={{justifyContent: "flex-end"}} theme={theme}/>
+          </Col>
+        </Row>
+      </>
+  )
 };
 
 export default Header;

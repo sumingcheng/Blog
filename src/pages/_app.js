@@ -1,19 +1,24 @@
 import '@/styles/reset.css'
 import '@/styles/globals.css'
 import {ConfigProvider} from 'antd';
-import React from 'react';
+import React, {useState} from 'react';
+import {ThemeContext} from '@/context/index.tsx';
 
 function _App ({Component, pageProps}) {
+  const [theme, setTheme] = useState('light');
+
   // antd 配置主题颜色
   return <>
     <ConfigProvider
         theme={{
-          // token: {
-          //   "colorPrimary": "#000000",
-          // },
+          token: {
+            "colorPrimary": theme === 'light' ? "#1677ff" : 'dark',
+          },
         }}
     >
-      <Component {...pageProps} />
+      <ThemeContext.Provider value={{theme, setTheme}}>
+        <Component {...pageProps} />
+      </ThemeContext.Provider>
     </ConfigProvider>
   </>
 }
