@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "@/layout/header";
+import Header from "@/layout/header.tsx"
 import {Col, Row} from 'antd';
-import Footer from "@/layout/footer";
-import {Props} from "@/types/layout";
+import Footer from "@/layout/footer.tsx"
+import {Props} from "@/types/layout.ts";
 
 const Layout: React.FC<Props> = ({children}) => {
   return (
