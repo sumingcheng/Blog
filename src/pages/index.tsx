@@ -11,21 +11,25 @@ function IndexPage () {
   const el = React.useRef(null);
 
   const SuCardArr = [{
+    id: "1",
     title: 'ChatGPT',
     url: '',
     description: 'ChatGPT is a chatbot based on GPT-3',
     time: '2023年6月21日 12:11:58'
   }, {
+    id: "2",
     title: 'Nextcloud',
     url: '',
     description: 'Nextcloud is a suite of client-server software for creating and using file hosting services',
     time: '2023年6月21日 12:11:58'
   }, {
+    id: "3",
     title: 'NPM',
     url: '',
     description: 'NPM is a package manager for the JavaScript programming language',
     time: '2023年6月21日 12:11:58'
   }, {
+    id: "4",
     title: 'ChatGPT',
     url: '',
     description: 'ChatGPT is a chatbot based on GPT-3',
@@ -35,7 +39,7 @@ function IndexPage () {
   React.useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [playText],
-      typeSpeed: 60, // 打字速度
+      typeSpeed: 10, // 打字速度
       backSpeed: 30, // 删除速度
       loop: false // 不循环
     });
@@ -63,7 +67,7 @@ function IndexPage () {
         {/*card*/}
         <div className={`w-full flex justify-around mt-16`}>
           {SuCardArr.map(elem => {
-            return <SuCard title={elem.title} description={elem.description} url={elem.url} time={elem.time}/>
+            return <SuCard title={elem.title} description={elem.description} url={elem.url} time={elem.time} key={elem.id}/>
           })}
         </div>
       </Layout>
