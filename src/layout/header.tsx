@@ -83,11 +83,11 @@ const Header: React.FC = () => {
     },
   ];
   return <>
-    <div className="absolute top-3 left-4 flex items-center cursor-pointer" onClick={goIndex}>
+    <div className="absolute top-4 left-6 flex items-center cursor-pointer" onClick={goIndex}>
       <Image src={headerImage} alt="header" className="w-6 h-6"/>
       <div className="font-bold ml-4">SuMingcheng Blog</div>
     </div>
-    <Menu className="mr-4" onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}
+    <Menu className="mr-6 p-2" onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}
           style={{justifyContent: "flex-end"}} theme="light"/>
   </>
 };

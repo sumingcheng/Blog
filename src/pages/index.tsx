@@ -21,8 +21,13 @@ function IndexPage () {
 
   return (
       <Layout>
-        <div className={`w-1/2 mx-auto mt-10 text-4xl indent-4 leading-10`}>
+        {/*打字机*/}
+        <div className={`w-1/2 mx-auto mt-10 text-4xl indent-4 leading-22`}>
           <span ref={el}/>
+        </div>
+        {/*card*/}
+        <div className={`w-full`}>
+
         </div>
       </Layout>
   )
