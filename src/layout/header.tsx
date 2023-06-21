@@ -31,13 +31,15 @@ const Header: React.FC = () => {
   const items: MenuProps['items'] = [
     {
       label: (
-          <a onClick={goIndex}>首页</a>
+          <a onClick={goIndex} className={`font-bold`}>首页</a>
       ),
       key: '1',
       icon: <HomeFilled style={{color: "#fdd663"}}/>,
     },
     {
-      label: '应用',
+      label: (
+          <a className={`font-bold`}>应用</a>
+      ),
       key: '2',
       icon: <AppstoreFilled style={{color: "#1677ff"}}/>,
       children: [
@@ -47,7 +49,7 @@ const Header: React.FC = () => {
           children: [
             {
               label: (
-                  <a href="https://sumingcheng.github.io/Vue3-TS-ChatGPT/#/" target="_blank"
+                  <a className={`font-bold`} href="https://sumingcheng.github.io/Vue3-TS-ChatGPT/#/" target="_blank"
                      rel="noopener noreferrer">ChatGPT</a>
               ),
               key: 'ChatGPT',
@@ -69,14 +71,16 @@ const Header: React.FC = () => {
     },
     {
       label: (
-          <a href="https://www.yuque.com/sumingcheng" target="_blank" rel="noopener noreferrer">博客</a>
+          <a className={`font-bold`} href="https://www.yuque.com/sumingcheng" target="_blank"
+             rel="noopener noreferrer">博客</a>
       ),
       key: '3',
       icon: <YuqueFilled style={{color: "#47c870"}}/>,
     },
     {
       label: (
-          <a href="https://github.com/sumingcheng?tab=stars" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a className={`font-bold`} href="https://github.com/sumingcheng?tab=stars" target="_blank"
+             rel="noopener noreferrer">GitHub</a>
       ),
       key: '4',
       icon: <GithubFilled/>,
@@ -85,7 +89,7 @@ const Header: React.FC = () => {
   return <>
     <div className="absolute top-4 left-6 flex items-center cursor-pointer" onClick={goIndex}>
       <Image src={headerImage} alt="header" className="w-6 h-6"/>
-      <div className="font-bold ml-4">SuMingcheng Blog</div>
+      <div className="font-bold ml-4 text-xl">SuMingcheng Blog</div>
     </div>
     <Menu className="mr-6 p-2" onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}
           style={{justifyContent: "flex-end"}} theme="light"/>

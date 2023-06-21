@@ -1,9 +1,38 @@
 .card {
-  .title {
-
+  &:hover {
+    .icon {
+      transform: scaleX(1.1);
+    }
   }
 
-  .description {
+  .icon {
+    font-weight: bold;
+    transform: scaleX(1.1);
+  }
+}
 
+.BackgroundCloth {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 200% 200%;
+  border-radius: 0 0 8px 8px;
+  animation: gradient 5s ease infinite;
+  background-image: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #ee7752);
+  background-blend-mode: soft-light;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0 50%;
+    }
   }
 }

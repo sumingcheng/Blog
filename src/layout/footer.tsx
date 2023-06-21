@@ -1,5 +1,5 @@
 import {BugFilled, ClockCircleFilled, HeartFilled, MessageFilled} from "@ant-design/icons";
-import S from '@/assets/scss/footerIcon.module.scss';
+import S from '@/assets/scss/layout.module.scss';
 
 const Footer = () => {
 

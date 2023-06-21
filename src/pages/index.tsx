@@ -2,27 +2,34 @@ import Layout from "@/layout";
 import React from 'react';
 import Typed from 'typed.js';
 import SuCard from "@/components/SuCard";
+import BackgroundCloth from "@/components/BackgroundCloth";
+import {Button} from "antd";
+import S from '@/assets/scss/index.module.scss'
 
 function IndexPage () {
-  const playText = "Growth is not always a smooth journey, but every step is worth documenting. In this blog, I will share my explorations and discoveries in both personal and professional life."
+  const playText = "Growth is not always a smooth journey, but every step is worth documenting. In this blog, I will share my explorations and discoveries in both personal and professional life.😀"
   const el = React.useRef(null);
 
   const SuCardArr = [{
     title: 'ChatGPT',
     url: '',
     description: 'ChatGPT is a chatbot based on GPT-3',
+    time: '2023年6月21日 12:11:58'
   }, {
     title: 'Nextcloud',
     url: '',
     description: 'Nextcloud is a suite of client-server software for creating and using file hosting services',
+    time: '2023年6月21日 12:11:58'
   }, {
     title: 'NPM',
     url: '',
     description: 'NPM is a package manager for the JavaScript programming language',
+    time: '2023年6月21日 12:11:58'
   }, {
     title: 'ChatGPT',
     url: '',
     description: 'ChatGPT is a chatbot based on GPT-3',
+    time: '2023年6月21日 12:11:58'
   }]
 
   React.useEffect(() => {
@@ -41,13 +48,22 @@ function IndexPage () {
   return (
       <Layout>
         {/*打字机*/}
-        <div className={`w-1/2 mx-auto mt-10 text-4xl indent-4 leading-normal h-64`}>
-          <span ref={el}/>
+        <BackgroundCloth>
+          <div className={`w-2/3 mx-auto mt-20 text-4xl indent-4 leading-normal h-64 text-white font-bold`}>
+            <span ref={el}/>
+          </div>
+        </BackgroundCloth>
+        {/*中间文字*/}
+        <div className={`text-center my-16 text-6xl font-bold`}>SuMingcheng Blog</div>
+        <div className={`${S.buttonGrid} text-center  `}>
+          <Button size={"large"}>搜索</Button>
+          <Button size={"large"}>历史文章</Button>
+          <Button size={"large"}>历史文章</Button>
         </div>
         {/*card*/}
-        <div className={`w-full flex justify-between`}>
+        <div className={`w-full flex justify-around mt-16`}>
           {SuCardArr.map(elem => {
-            return <SuCard title={elem.title} description={elem.description} url={elem.url}/>
+            return <SuCard title={elem.title} description={elem.description} url={elem.url} time={elem.time}/>
           })}
         </div>
       </Layout>
