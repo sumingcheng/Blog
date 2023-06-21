@@ -3,13 +3,15 @@ import React from 'react';
 import Typed from 'typed.js';
 
 function IndexPage () {
+  const playText = "Growth is not always a smooth journey, but every step is worth documenting. In this blog, I will share my explorations and discoveries in both personal and professional life."
   const el = React.useRef(null);
+
   React.useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
-      typeSpeed: 50,
-      // loop: true,
-      // loopCount: 3,
+      strings: [playText],
+      typeSpeed: 50, // 打字速度
+      backSpeed: 30, // 删除速度
+      loop: false // 不循环
     });
 
     return () => {
@@ -19,7 +21,9 @@ function IndexPage () {
 
   return (
       <Layout>
-        <span ref={el} className={`text-5xl`}/>
+        <div className={`w-1/2 mx-auto mt-10 text-4xl indent-4`}>
+          <span ref={el}/>
+        </div>
       </Layout>
   )
 }
