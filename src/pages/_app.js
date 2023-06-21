@@ -9,7 +9,7 @@ function _App ({Component, pageProps}) {
     <ConfigProvider
         theme={{
           // token: {
-          //   colorPrimary: '#353535',
+          //   "colorPrimary": "#000000",
           // },
         }}
     >
