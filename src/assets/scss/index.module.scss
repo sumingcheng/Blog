@@ -4,3 +4,11 @@
     margin: 0.5rem;
   }
 }
+
+.lineClamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}

@@ -11,11 +11,11 @@ const SuCard: React.FC<SuCardProps> = ({title, description, url, time}) => {
 
   return (
       <Card className={`w-1/5  ${S.card} relative`} hoverable={true} onClick={nextUrl}>
-        <div className={`title text-2xl font-bold`}>
+        <div className={`title text-2xl font-bold truncate`}>
           {title} <ArrowRightOutlined className={`ml-4 font-bold ${S.icon}`}/>
         </div>
-        <div className={`description mb-6`}>{description}</div>
-        <div className={`absolute left-6 bottom-4 font-bold`}>{time}</div>
+        <div className={`truncate description mb-6`}>{description}</div>
+        <div className={`truncate relative left-0 bottom-0 font-bold`}>{time}</div>
       </Card>
   )
 }

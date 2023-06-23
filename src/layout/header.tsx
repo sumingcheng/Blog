@@ -1,17 +1,17 @@
-import React, {useContext, useState} from 'react';
-import {AppstoreFilled, CloudFilled, CodeSandboxSquareFilled, GithubFilled, HomeFilled, RobotFilled, YuqueFilled} from '@ant-design/icons';
-import type {MenuProps} from 'antd';
-import {Col, Input, Menu, Row} from 'antd';
+import React, { useContext, useState } from 'react';
+import { AppstoreFilled, CloudFilled, CodeSandboxSquareFilled, GithubFilled, HomeFilled, RobotFilled, YuqueFilled } from '@ant-design/icons';
+import type { MenuProps } from 'antd';
+import { Col, Input, Menu, Row } from 'antd';
 import Image from 'next/image';
 import headerImage from '@/assets/icons/header.jpg'
-import {useRouter} from "next/router";
-import {ThemeContext} from "@/context";
+import { useRouter } from "next/router";
+import { ThemeContext } from "@/context";
 import DayAndNightBtn from "@/components/dayAndNightBtn.tsx";
 import S from '@/assets/scss/layout.module.scss'
 
 const Header: React.FC = () => {
-  const [current, setCurrent] = useState('mail');
-  const {theme, setTheme} = useContext(ThemeContext);
+  const [ current, setCurrent ] = useState('mail');
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const router = useRouter()
 
@@ -30,7 +30,8 @@ const Header: React.FC = () => {
   }
 
   // 夜晚模式
-  const nightMode = () => {
+  const nightMode = (e: any) => {
+    e.preventDefault();
     if (theme === 'dark') {
       setTheme('light');
     } else {
@@ -45,23 +46,23 @@ const Header: React.FC = () => {
           <a onClick={goIndex} className={`font-bold`}>首页</a>
       ),
       key: '1',
-      icon: <HomeFilled style={{color: "#fdd663"}}/>,
+      icon: <HomeFilled style={{ color: "#fdd663" }}/>,
     },
     {
       label: (
           <a className={`font-bold`}>应用</a>
       ),
       key: '2',
-      icon: <AppstoreFilled style={{color: "#1677ff"}}/>,
+      icon: <AppstoreFilled style={{ color: "#1677ff" }}/>,
       children: [
         {
           type: 'group',
-          label: '服务',
+          label: '私人服务',
           children: [
             {
               label: (
                   <a className={`font-bold`} href="https://sumingcheng.github.io/Vue3-TS-ChatGPT/#/" target="_blank"
-                     rel="noopener noreferrer">ChatGPT</a>
+                      rel="noopener noreferrer">ChatGPT</a>
               ),
               key: 'ChatGPT',
               icon: <RobotFilled/>,
@@ -83,15 +84,15 @@ const Header: React.FC = () => {
     {
       label: (
           <a className={`font-bold`} href="https://www.yuque.com/sumingcheng" target="_blank"
-             rel="noopener noreferrer">博客</a>
+              rel="noopener noreferrer">博客</a>
       ),
       key: '3',
-      icon: <YuqueFilled style={{color: "#47c870"}}/>,
+      icon: <YuqueFilled style={{ color: "#47c870" }}/>,
     },
     {
       label: (
           <a className={`font-bold`} href="https://github.com/sumingcheng?tab=stars" target="_blank"
-             rel="noopener noreferrer">GitHub</a>
+              rel="noopener noreferrer">GitHub</a>
       ),
       key: '4',
       icon: <GithubFilled/>,
@@ -99,30 +100,29 @@ const Header: React.FC = () => {
   ];
   return (
       <>
-        <Row className="h-16">
+        <Row className={`h-16 ${S.transitionBg} ${S.headerRow} ${theme === "dark" ? S.headerNight : 'bg-white'}`}>
           <Col span={4}>
             <div className="mt-4 ml-6 flex items-center cursor-pointer" onClick={goIndex}>
               <Image src={headerImage} alt="header" className="w-6 h-6"/>
-              <div className={`font-bold ml-4 text-xl ${theme === "dark" ? 'text-white' : ''}`}>SuMingcheng Blog</div>
+              <div
+                  className={`font-bold truncate ml-4 text-xl ${theme === "dark" ? 'text-white' : ''}`}>SuMingcheng Blog
+              </div>
             </div>
           </Col>
-          <Col span={4} offset={8} className="relative">
+          <Col span={5}></Col>
+          <Col span={4} className="relative">
             <div className="absolute -top-3 right-0" onClick={nightMode}>
               <DayAndNightBtn/>
             </div>
           </Col>
           <Col span={3}>
-            <Input className={`mt-4 ${theme === "dark" ? S.headerInput : ''}`} addonAfter="Ctrl+K" placeholder={'Quick search...'} onFocus={focusInput}/>
+            <Input className={`mt-4 ${theme === "dark" ? S.headerInput : ''}`} addonAfter="Ctrl+K"
+                placeholder={'Quick search...'} onFocus={focusInput}/>
           </Col>
-          <Col span={5}>
-            {/*<Menu className={`mr-6 p-2 flor ${S.Menu}`} onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}*/}
-            {/*      style={{justifyContent: "flex-end"}} theme={theme}/>*/}
-          </Col>
-        </Row>
-        <Row className={`absolute w-full -z-10 top-0 right-0 h-16`}>
-          <Col span={24}>
-            <Menu className={`mr-6 p-2 w-full`} onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}
-                  style={{justifyContent: "flex-end"}} theme={theme}/>
+          <Col span={8}>
+            <Menu className={`mr-6 p-2 w-full border-none ${S.transitionBg}`} onClick={onClick} selectedKeys={[ current ]} mode="horizontal"
+                items={items}
+                style={{ justifyContent: "flex-end" }} theme={theme}/>
           </Col>
         </Row>
       </>

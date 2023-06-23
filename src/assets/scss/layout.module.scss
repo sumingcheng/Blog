@@ -23,3 +23,16 @@
 .headerInput :global(.ant-input-group-addon) {
   color: white !important;
 }
+
+.headerRow {
+  border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+}
+
+.headerNight {
+  background-color: #001529;
+  --tw-bg-opacity: 1;
+}
+
+.transitionBg {
+  transition: background-color 0.5s ease-out;
+}

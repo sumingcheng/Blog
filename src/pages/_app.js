@@ -12,7 +12,7 @@ function _App ({Component, pageProps}) {
     <ConfigProvider
         theme={{
           token: {
-            "colorPrimary": theme === 'light' ? "#1677ff" : 'dark',
+            "colorPrimary": theme === 'light' ? "light" : 'dark',
           },
         }}
     >
