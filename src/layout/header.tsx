@@ -1,17 +1,17 @@
-import React, { useContext, useState } from 'react';
-import { AppstoreFilled, CloudFilled, CodeSandboxSquareFilled, GithubFilled, HomeFilled, RobotFilled, YuqueFilled } from '@ant-design/icons';
-import type { MenuProps } from 'antd';
-import { Col, Input, Menu, Row } from 'antd';
+import React, {useContext, useState} from 'react';
+import {AppstoreFilled, CloudFilled, CodeSandboxSquareFilled, GithubFilled, HomeFilled, RobotFilled, YuqueFilled} from '@ant-design/icons';
+import type {MenuProps} from 'antd';
+import {Col, Input, Menu, Row} from 'antd';
 import Image from 'next/image';
 import headerImage from '@/assets/icons/header.jpg'
-import { useRouter } from "next/router";
-import { ThemeContext } from "@/context";
+import {useRouter} from "next/router";
+import {ThemeContext} from "@/context";
 import DayAndNightBtn from "@/components/dayAndNightBtn.tsx";
 import S from '@/assets/scss/layout.module.scss'
 
 const Header: React.FC = () => {
-  const [ current, setCurrent ] = useState('mail');
-  const { theme, setTheme } = useContext(ThemeContext);
+  const [current, setCurrent] = useState('mail');
+  const {theme, setTheme} = useContext(ThemeContext);
 
   const router = useRouter()
 
@@ -46,14 +46,14 @@ const Header: React.FC = () => {
           <a onClick={goIndex} className={`font-bold`}>首页</a>
       ),
       key: '1',
-      icon: <HomeFilled style={{ color: "#fdd663" }}/>,
+      icon: <HomeFilled style={{color: "#fdd663"}}/>,
     },
     {
       label: (
           <a className={`font-bold`}>应用</a>
       ),
       key: '2',
-      icon: <AppstoreFilled style={{ color: "#1677ff" }}/>,
+      icon: <AppstoreFilled style={{color: "#1677ff"}}/>,
       children: [
         {
           type: 'group',
@@ -62,18 +62,24 @@ const Header: React.FC = () => {
             {
               label: (
                   <a className={`font-bold`} href="https://sumingcheng.github.io/Vue3-TS-ChatGPT/#/" target="_blank"
-                      rel="noopener noreferrer">ChatGPT</a>
+                     rel="noopener noreferrer">ChatGPT</a>
               ),
               key: 'ChatGPT',
               icon: <RobotFilled/>,
             },
             {
-              label: 'Nextcloud',
+              label: (
+                  <a className={`font-bold`} href={`http://82.157.118.166:20002/`} target="_blank"
+                     rel="noopener noreferrer">Nextcloud</a>
+              ),
               key: 'Nextcloud',
               icon: <CloudFilled/>,
             },
             {
-              label: 'NPM',
+              label: (
+                  <a className={`font-bold`} href={`http://82.157.118.166:20003/`} target="_blank"
+                     rel="noopener noreferrer">NPM</a>
+              ),
               key: 'NPM',
               icon: <CodeSandboxSquareFilled/>,
             },
@@ -84,15 +90,15 @@ const Header: React.FC = () => {
     {
       label: (
           <a className={`font-bold`} href="https://www.yuque.com/sumingcheng" target="_blank"
-              rel="noopener noreferrer">博客</a>
+             rel="noopener noreferrer">博客</a>
       ),
       key: '3',
-      icon: <YuqueFilled style={{ color: "#47c870" }}/>,
+      icon: <YuqueFilled style={{color: "#47c870"}}/>,
     },
     {
       label: (
           <a className={`font-bold`} href="https://github.com/sumingcheng?tab=stars" target="_blank"
-              rel="noopener noreferrer">GitHub</a>
+             rel="noopener noreferrer">GitHub</a>
       ),
       key: '4',
       icon: <GithubFilled/>,
@@ -117,12 +123,12 @@ const Header: React.FC = () => {
           </Col>
           <Col span={3}>
             <Input className={`mt-4 ${theme === "dark" ? S.headerInput : ''}`} addonAfter="Ctrl+K"
-                placeholder={'Quick search...'} onFocus={focusInput}/>
+                   placeholder={'Quick search...'} onFocus={focusInput}/>
           </Col>
           <Col span={8}>
-            <Menu className={`mr-6 p-2 w-full border-none ${S.transitionBg}`} onClick={onClick} selectedKeys={[ current ]} mode="horizontal"
-                items={items}
-                style={{ justifyContent: "flex-end" }} theme={theme}/>
+            <Menu className={`mr-6 p-2 w-full border-none ${S.transitionBg}`} onClick={onClick} selectedKeys={[current]} mode="horizontal"
+                  items={items}
+                  style={{justifyContent: "flex-end"}} theme={theme}/>
           </Col>
         </Row>
       </>
