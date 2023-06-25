@@ -125,8 +125,8 @@ const Header: React.FC = () => {
             <Input className={`mt-4 ${theme === "dark" ? S.headerInput : ''}`} addonAfter="Ctrl+K"
                    placeholder={'Quick search...'} onFocus={focusInput}/>
           </Col>
-          <Col span={8}>
-            <Menu className={`mr-6 p-2 w-full border-none ${S.transitionBg}`} onClick={onClick} selectedKeys={[current]} mode="horizontal"
+          <Col span={8} className={`pt-2`}>
+            <Menu className={`w-full h-full border-none ${S.transitionBg}`} onClick={onClick} selectedKeys={[current]} mode="horizontal"
                   items={items}
                   style={{justifyContent: "flex-end"}} theme={theme}/>
           </Col>
