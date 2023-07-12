@@ -16,25 +16,25 @@ function IndexPage() {
     id: "1",
     title: 'ChatGPT',
     url: '',
-    description: 'ChatGPT is a chatbot based on GPT-3',
+    description: 'Chat GPT service that does not need to worry about IP issues',
     time: '2023年6月21日 12:11:58'
   }, {
     id: "2",
     title: 'Nextcloud',
     url: '',
-    description: 'Nextcloud is a suite of client-server software for creating and using file hosting services',
+    description: 'privateCloudDisk',
     time: '2023年6月21日 12:11:58'
   }, {
     id: "3",
     title: 'NPM',
     url: '',
-    description: 'NPM is a package manager for the JavaScript programming language',
+    description: 'private NPM Repository',
     time: '2023年6月21日 12:11:58'
   }, {
     id: "4",
     title: 'ChatRoom',
     url: '',
-    description: 'ChatRoom is a chatbot based on GPT-3',
+    description: 'Vue3+TS online chat room, using express in the background',
     time: '2023年6月21日 12:11:58'
   }]
 
@@ -70,7 +70,7 @@ function IndexPage() {
           <Button size={"large"} type={"primary"} onClick={seeMore}>More</Button>
         </div>
         {/*Card*/}
-        <div className={`w-full flex justify-around mt-16 mb-4`}>
+        <div className={`w-full flex justify-around mt-14 mb-4`}>
           {SuCardArr.map(elem => {
             return <SuCard title={elem.title} description={elem.description} url={elem.url} time={elem.time} key={elem.id}/>
           })}
