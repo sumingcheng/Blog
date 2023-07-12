@@ -1,5 +1,13 @@
 import React, {useContext, useState} from 'react';
-import {AppstoreFilled, CloudFilled, CodeSandboxSquareFilled, GithubFilled, HomeFilled, RobotFilled, YuqueFilled} from '@ant-design/icons';
+import {
+  AppstoreFilled,
+  CloudFilled,
+  CodeSandboxSquareFilled,
+  GithubFilled,
+  HomeFilled,
+  RobotFilled,
+  YuqueFilled
+} from '@ant-design/icons';
 import type {MenuProps} from 'antd';
 import {Col, Input, Menu, Row} from 'antd';
 import Image from 'next/image';
@@ -15,8 +23,7 @@ const Header: React.FC = () => {
 
   const router = useRouter()
 
-  const onClick: MenuProps['onClick'] = (e) => {
-    console.log('click ', e);
+  const onClick: MenuProps['onClick'] = (e: any) => {
     setCurrent(e.key);
   };
 
@@ -29,28 +36,17 @@ const Header: React.FC = () => {
     console.log('focusInput');
   }
 
-  // 夜晚模式
-  const nightMode = (e: any) => {
-    e.preventDefault();
-    if (theme === 'dark') {
-      setTheme('light');
-    } else {
-      setTheme('dark');
-    }
-  }
-
-
   const items: MenuProps['items'] = [
     {
       label: (
-          <a onClick={goIndex} className={`font-bold`}>首页</a>
+          <a onClick={goIndex} className={`font-bold`}>Home</a>
       ),
       key: '1',
       icon: <HomeFilled style={{color: "#fdd663"}}/>,
     },
     {
       label: (
-          <a className={`font-bold`}>应用</a>
+          <a className={`font-bold`}>App</a>
       ),
       key: '2',
       icon: <AppstoreFilled style={{color: "#1677ff"}}/>,
@@ -83,6 +79,14 @@ const Header: React.FC = () => {
               key: 'NPM',
               icon: <CodeSandboxSquareFilled/>,
             },
+            {
+              label: (
+                  <a className={`font-bold`} href={`http://82.157.118.166:20007/`} target="_blank"
+                     rel="noopener noreferrer">ChatRoom</a>
+              ),
+              key: 'ChatRoom',
+              icon: <CodeSandboxSquareFilled/>,
+            },
           ],
         },
       ],
@@ -90,7 +94,7 @@ const Header: React.FC = () => {
     {
       label: (
           <a className={`font-bold`} href="https://www.yuque.com/sumingcheng" target="_blank"
-             rel="noopener noreferrer">博客</a>
+             rel="noopener noreferrer">Blog</a>
       ),
       key: '3',
       icon: <YuqueFilled style={{color: "#47c870"}}/>,
@@ -117,7 +121,7 @@ const Header: React.FC = () => {
           </Col>
           <Col span={5}></Col>
           <Col span={4} className="relative">
-            <div className="absolute -top-3 right-0" onClick={nightMode}>
+            <div className="absolute -top-3 right-0">
               <DayAndNightBtn/>
             </div>
           </Col>
@@ -125,10 +129,9 @@ const Header: React.FC = () => {
             <Input className={`mt-4 ${theme === "dark" ? S.headerInput : ''}`} addonAfter="Ctrl+K"
                    placeholder={'Quick search...'} onFocus={focusInput}/>
           </Col>
-          <Col span={8} className={`pt-2`}>
-            <Menu className={`w-full h-full border-none ${S.transitionBg}`} onClick={onClick} selectedKeys={[current]} mode="horizontal"
-                  items={items}
-                  style={{justifyContent: "flex-end"}} theme={theme}/>
+          <Col span={8} className={`pt-2 pr-2`}>
+            <Menu className={`w-full h-full border-none ${S.transitionBg}`} onClick={onClick} selectedKeys={[current]}
+                  mode="horizontal" items={items} style={{justifyContent: "flex-end"}} theme={theme}/>
           </Col>
         </Row>
       </>

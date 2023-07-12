@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "@/layout/header.tsx"
-import { Col, Row } from 'antd';
+import {Col, Row} from 'antd';
 import Footer from "@/layout/footer.tsx"
-import { Props } from "@/types/layout.ts";
+import {Props} from "@/types/layout.ts";
 
-const Layout: React.FC<Props> = ({ children }) => {
+const Layout: React.FC<Props> = ({children}) => {
   return (
       <>
         <div className="flex flex-col min-h-screen">
