@@ -1,6 +1,6 @@
 import Layout from '@/layout/index';
 
-function About () {
+function More() {
   return (
       <Layout>
         123
@@ -8,4 +8,4 @@ function About () {
   )
 }
 
-export default About
+export default More

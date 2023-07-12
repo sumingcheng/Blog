@@ -4,7 +4,7 @@ export interface Props {
   children: ReactNode;  // 指定children属性
 }
 
-export interface MenuTheme {
+export interface switchTheme {
   theme: 'light' | 'dark';
   setTheme: (theme: string) => void;
 }

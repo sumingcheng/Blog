@@ -30,9 +30,9 @@ function IndexPage() {
     time: '2023年6月21日 12:11:58'
   }, {
     id: "4",
-    title: 'ChatGPT',
+    title: 'ChatRoom',
     url: '',
-    description: 'ChatGPT is a chatbot based on GPT-3',
+    description: 'ChatRoom is a chatbot based on GPT-3',
     time: '2023年6月21日 12:11:58'
   }]
 
@@ -49,6 +49,10 @@ function IndexPage() {
     };
   }, []);
 
+  const seeMore = () => {
+    console.log("see more")
+  }
+
   return (
       <Layout>
         {/*打字机*/}
@@ -58,17 +62,15 @@ function IndexPage() {
           </div>
         </BackgroundCloth>
         {/*中间文字*/}
-        <div className={`text-center my-16 text-5xl font-bold `}>SuMingcheng Blog</div>
-        <div className={`${S.buttonGrid} text-center  `}>
+        <div className={`text-center my-16 text-5xl font-bold`}>SuMingcheng Blog</div>
+        <div className={`${S.buttonGrid} text-center`}>
           <Button size={"large"}>Search</Button>
-          <Button size={"large"}>More</Button>
-          <Button size={"large"}>SoftwareRepository</Button>
+          <Button size={"large"} type={"primary"} onClick={seeMore}>More</Button>
         </div>
-        {/*card*/}
+        {/*Card*/}
         <div className={`w-full flex justify-around mt-16 mb-4`}>
           {SuCardArr.map(elem => {
-            return <SuCard title={elem.title} description={elem.description} url={elem.url} time={elem.time}
-                           key={elem.id}/>
+            return <SuCard title={elem.title} description={elem.description} url={elem.url} time={elem.time} key={elem.id}/>
           })}
         </div>
       </Layout>

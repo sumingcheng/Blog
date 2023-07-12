@@ -1,9 +1,9 @@
 import React from 'react';
-import {MenuTheme} from "@/types/layout.ts";
+import {switchTheme} from "@/types/layout.ts";
 
-export const ThemeContext = React.createContext<MenuTheme>({
+export const ThemeContext = React.createContext<switchTheme>({
   theme: 'light', // 默认主题
   setTheme: () => {
-  },
+  }
 });
 
