@@ -58,7 +58,7 @@ function IndexPage() {
           </div>
         </BackgroundCloth>
         {/*中间文字*/}
-        <div className={`text-center my-16 text-5xl font-bold`}>SuMingcheng Blog</div>
+        <div className={`text-center my-16 text-5xl font-bold `}>SuMingcheng Blog</div>
         <div className={`${S.buttonGrid} text-center  `}>
           <Button size={"large"}>Search</Button>
           <Button size={"large"}>More</Button>
