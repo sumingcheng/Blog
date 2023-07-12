@@ -4,7 +4,7 @@ import {Col, Row} from 'antd';
 import Footer from "@/layout/footer.tsx"
 import {Props} from "@/types/layout.ts";
 
-const Layout: React.FC<Props> = ({children}) => {
+const Layout: React.FC<Props> = ({children, showFooter = true}) => {
   return (
       <>
         <div className={`flex flex-col min-h-screen`}>
@@ -19,11 +19,13 @@ const Layout: React.FC<Props> = ({children}) => {
             <Col span={2}></Col>
           </Row>
           {/*底部*/}
-          <Row className="flex-none">
-            <Col span={24}>
-              <Footer/>
-            </Col>
-          </Row>
+          {showFooter && ( // 添加这一行
+              <Row className="flex-none">
+                <Col span={24}>
+                  <Footer/>
+                </Col>
+              </Row>
+          )}
         </div>
       </>
   )

@@ -1,4 +1,4 @@
-import S from '@/assets/scss/dayAndNightBtn.module.scss'
+import BtnStyle from '@/assets/scss/dayAndNightBtn.module.scss'
 import {useContext, useState} from "react";
 import {ThemeContext} from "@/context";
 
@@ -22,8 +22,8 @@ const DayAndNightBtn = () => {
     }
   }
   return (
-      <div className={`${S.btnMain}`}>
-        <div className={`${S.btnStyle} ${isActive ? S.active : ''}`} onClick={onclick}></div>
+      <div className={`${BtnStyle.btnMain}`}>
+        <div className={`${BtnStyle.btnStyle} ${isActive ? BtnStyle.active : ''}`} onClick={onclick}></div>
       </div>
   )
 }

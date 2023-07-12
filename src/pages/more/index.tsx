@@ -2,7 +2,7 @@ import Layout from '@/layout/index';
 
 function More() {
   return (
-      <Layout>
+      <Layout showFooter={false}>
         123
       </Layout>
   )

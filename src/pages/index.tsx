@@ -5,10 +5,12 @@ import SuCard from "@/components/SuCard";
 import BackgroundCloth from "@/components/BackgroundCloth";
 import {Button} from "antd";
 import S from '@/assets/scss/index.module.scss'
+import {useRouter} from 'next/router'
 
 function IndexPage() {
   const playText = "Growth is not always a smooth journey, but every step is worth documenting. In this blog, I will share my explorations and discoveries in both personal and professional life.😊"
   const el = React.useRef(null);
+  const router = useRouter()
 
   const SuCardArr = [{
     id: "1",
@@ -50,7 +52,7 @@ function IndexPage() {
   }, []);
 
   const seeMore = () => {
-    console.log("see more")
+    router.push('/more')
   }
 
   return (

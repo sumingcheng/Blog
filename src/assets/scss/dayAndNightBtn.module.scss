@@ -1,6 +1,7 @@
 .btnMain {
   transform: scale(.2);
 }
+
 @function gradient($positionX, $positionY, $color1, $color2, $gradientSize1, $gradientSize2) {
   @return radial-gradient(circle at $positionX $positionY, $color1, $color1 $gradientSize1, $color2 $gradientSize2, $color2);
 }
