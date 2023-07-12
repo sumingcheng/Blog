@@ -31,6 +31,18 @@
 .headerNight {
   background-color: #001529;
   --tw-bg-opacity: 1;
+
+  span {
+    color: #fff;
+  }
+
+  div {
+    color: #fff;
+  }
+}
+
+.footerText {
+  color: #fff;
 }
 
 .transitionBg {
