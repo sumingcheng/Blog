@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {AppstoreFilled, CloudFilled, CodeSandboxSquareFilled, GithubFilled, HomeFilled, RobotFilled, YuqueFilled} from '@ant-design/icons';
+import {AppstoreFilled, CloudFilled, CodeSandboxSquareFilled, FireFilled, GithubFilled, HomeFilled, RobotFilled, YuqueFilled} from '@ant-design/icons';
 import type {MenuProps} from 'antd';
 import {Col, Input, Menu, Row} from 'antd';
 import Image from 'next/image';
@@ -77,7 +77,7 @@ const Header: React.FC = () => {
                      rel="noopener noreferrer">ChatRoom</a>
               ),
               key: 'ChatRoom',
-              icon: <CodeSandboxSquareFilled/>,
+              icon: <FireFilled />,
             },
           ],
         },
