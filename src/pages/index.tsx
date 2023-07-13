@@ -31,7 +31,7 @@ function IndexPage() {
     title: 'GitHub',
     url: 'https://github.com/sumingcheng',
     description: 'welcome To Follow Me',
-    time: '如果喜欢我的项目，请给我一个star吧！'
+    time: '如果喜欢我的项目，请给我一个stars吧！'
   }, {
     id: "4",
     title: 'ChatRoom',
