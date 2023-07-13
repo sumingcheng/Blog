@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "pm2 start -name nextProd20007 npm -- run start -p 20001",
+    "start": "next start -p 20001",
+    "pm2": "pm2 start npm --name Next20001 -- run start",
     "lint": "next lint"
   },
   "dependencies": {
