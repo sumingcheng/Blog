@@ -69,12 +69,12 @@ function IndexPage() {
         <div className={`mx-auto text-5xl font-bold w-full h-56`} ref={domElementRef}>
           <ThreeScene domElementRef={domElementRef}></ThreeScene>
         </div>
-        <div className={`${S.buttonGrid} text-center mt-4`}>
+        <div className={`${S.buttonGrid} text-center mt-6`}>
           <Button size={"large"}>Search</Button>
           <Button size={"large"} type={"primary"} onClick={seeMore}>More</Button>
         </div>
         {/*Card*/}
-        <div className={`w-full flex justify-around mt-14 mb-4`}>
+        <div className={`w-full flex justify-around mt-10 mb-4`}>
           {SuCardArr.map(elem => {
             return <SuCard title={elem.title} description={elem.description} url={elem.url} time={elem.time} key={elem.id}/>
           })}
