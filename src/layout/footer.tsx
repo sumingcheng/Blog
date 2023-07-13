@@ -13,7 +13,7 @@ const Footer = () => {
   return (
       <footer className={`w-full h-24 text-black text-center py-4 ${S.footer} ${theme === "dark" ? S.headerNight : 'bg-white'}`}>
         <div className={`my-2`}>© 2022 - 京ICP备2022029426号-1</div>
-        <div className={`flex justify-center items-center mt-4 ${S.footerIcon}`}>
+        <div className={`flex justify-center items-center mt-2  ${S.footerIcon}`}>
           <div>
             <MessageFilled/>
             <span>讨论区</span>

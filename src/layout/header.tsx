@@ -107,7 +107,7 @@ const Header: React.FC = () => {
             <div className="mt-4 ml-6 flex items-center cursor-pointer" onClick={goIndex}>
               <Image src={headerImage} alt="header" className="w-6 h-6"/>
               <div
-                  className={`font-bold truncate ml-4 text-xl ${theme === "dark" ? 'text-white' : ''}`}>SuMingcheng
+                  className={`font-bold truncate ml-4 text-xl ${theme === "dark" ? 'text-white' : ''}`}>Su Mingcheng's Blog
               </div>
             </div>
           </Col>

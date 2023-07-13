@@ -1,16 +1,18 @@
 import Layout from "@/layout";
-import React from 'react';
+import React, {useRef} from 'react';
 import Typed from 'typed.js';
 import SuCard from "@/components/SuCard";
 import BackgroundCloth from "@/components/BackgroundCloth";
 import {Button} from "antd";
 import S from '@/assets/scss/index.module.scss'
 import {useRouter} from 'next/router'
+import ThreeScene from "@/animation";
 
 function IndexPage() {
   const playText = "Growth is not always a smooth journey, but every step is worth documenting. In this blog, I will share my explorations and discoveries in both personal and professional life.😊"
   const el = React.useRef(null);
   const router = useRouter()
+  const domElementRef = useRef(null);
 
   const SuCardArr = [{
     id: "1",
@@ -64,8 +66,10 @@ function IndexPage() {
           </div>
         </BackgroundCloth>
         {/*中间文字*/}
-        <div className={`text-center my-16 text-5xl font-bold`}>SuMingcheng Blog</div>
-        <div className={`${S.buttonGrid} text-center`}>
+        <div className={`mx-auto text-5xl font-bold w-full h-56`} ref={domElementRef}>
+          <ThreeScene domElementRef={domElementRef}></ThreeScene>
+        </div>
+        <div className={`${S.buttonGrid} text-center mt-4`}>
           <Button size={"large"}>Search</Button>
           <Button size={"large"} type={"primary"} onClick={seeMore}>More</Button>
         </div>

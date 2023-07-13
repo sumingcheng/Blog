@@ -1,9 +1,9 @@
 import Layout from '@/layout/index';
-
 function More() {
+
   return (
       <Layout showFooter={false}>
-        123
+        <h1>1111</h1>
       </Layout>
   )
 }

@@ -10,7 +10,7 @@ const Layout: React.FC<Props> = ({children, showFooter = true}) => {
       <>
         <Head>
           <link rel="icon" href="/title.ico"/>
-          <title>SuMingcheng Blog</title>
+          <title>Su Mingcheng's Blog</title>
           <meta name="description" content="SuMingcheng"/>
         </Head>
         <div className={`flex flex-col min-h-screen`}>
