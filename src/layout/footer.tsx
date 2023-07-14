@@ -1,4 +1,4 @@
-import {BugFilled, ClockCircleFilled, HeartFilled, MessageFilled} from "@ant-design/icons";
+import {ApiFilled, BugFilled, ClockCircleFilled, HeartFilled, MessageFilled} from "@ant-design/icons";
 import S from '@/assets/scss/layout.module.scss';
 import {useContext} from "react";
 import {ThemeContext} from "@/context";
@@ -25,6 +25,10 @@ const Footer = () => {
           <div>
             <ClockCircleFilled/>
             <span>更新日志</span>
+          </div>
+          <div>
+            <ApiFilled/>
+            <span>友链</span>
           </div>
           <div onClick={onAnt}>
             <HeartFilled style={{color: "red"}}/>
