@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p 20001",
-    "pm2": "pm2 start npm --name Next20001 -- run start",
+    "pm2": "bash build.sh",
     "lint": "next lint"
   },
   "dependencies": {
