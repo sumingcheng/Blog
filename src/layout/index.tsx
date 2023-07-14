@@ -18,11 +18,9 @@ const Layout: React.FC<Props> = ({children, showFooter = true}) => {
           <Header></Header>
           {/*内容*/}
           <Row className="flex-grow relative">
-            <Col span={2}></Col>
-            <Col span={20}>
+            <div className={`w-4/5 mx-auto`}>
               {children}
-            </Col>
-            <Col span={2}></Col>
+            </div>
           </Row>
           {/*底部*/}
           {showFooter && ( // 添加这一行

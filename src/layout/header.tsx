@@ -77,7 +77,7 @@ const Header: React.FC = () => {
                      rel="noopener noreferrer">ChatRoom</a>
               ),
               key: 'ChatRoom',
-              icon: <FireFilled />,
+              icon: <FireFilled/>,
             },
           ],
         },
