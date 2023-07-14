@@ -86,7 +86,7 @@ const Header: React.FC = () => {
     {
       label: (
           <a className={`font-bold`} href="https://www.yuque.com/sumingcheng" target="_blank"
-             rel="noopener noreferrer">Blog</a>
+             rel="noopener noreferrer">Note</a>
       ),
       key: '3',
       icon: <YuqueFilled style={{color: "#47c870"}}/>,
