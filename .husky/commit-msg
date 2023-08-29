@@ -4,17 +4,14 @@
 # 获取提交消息内容
 MSG=$(cat "$1")
 
-# 使用正则表达式检查提交消息的格式
-if ! echo "$MSG" | grep -qE "^(feat|fix|chore|docs|style|refactor|perf|test): "; then
-  echo "ERROR: Commit message format is incorrect!"
-  echo "Valid formats are:"
-  echo "  feat:     (new feature)"
-  echo "  fix:      (bug fix)"
-  echo "  chore:    (maintenance tasks)"
-  echo "  docs:     (documentation changes)"
-  echo "  style:    (formatting, missing semi colons, etc)"
-  echo "  refactor: (refactoring code)"
-  echo "  perf:     (performance improvements)"
-  echo "  test:     (adding missing tests)"
-  exit 1
-fi
+validate_commit_message() {
+  # 使用正则表达式检查提交消息的格式
+  # 我们确保 `:` 后面有一个空格
+  if ! echo "$MSG" | grep -qE "^(feat|fix|chore|docs|style|refactor|perf|test): ."; then
+    echo "ERROR: Commit message format is incorrect!"
+    echo "Ensure your message starts with 'feat: ', 'fix: ', etc."
+    exit 1
+  fi
+}
+
+validate_commit_message
