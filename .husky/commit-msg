@@ -27,4 +27,3 @@ validate_commit_message() {
 }
 
 validate_commit_message
-npx --no-install commitlint --edit "$1"
